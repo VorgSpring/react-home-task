@@ -1,0 +1,19 @@
+{
+  "name": "react-home-task",
+  "version": "1.0.0",
+  "description": "home work on course loftschool react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VorgSpring/react-home-task.git"
+  },
+  "author": "Sergey Pavlov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VorgSpring/react-home-task/issues"
+  },
+  "homepage": "https://github.com/VorgSpring/react-home-task#readme"
+}
