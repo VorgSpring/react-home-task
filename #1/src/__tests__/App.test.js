@@ -18,21 +18,21 @@ describe('App component', () => {
   describe('check presence of instance methods', () => {
     const wrapper = shallow(<App />);
     it('contain instance method handleChange', () => {
-      expect(wrapper.instance().handleChange).toBeDefined();
+      expect(wrapper.instance().onChange).toBeDefined();
     });
 
     it('contain instance method handleNewPost', () => {
-      expect(wrapper.instance().handleNewPost).toBeDefined();
+      expect(wrapper.instance().onClick).toBeDefined();
     });
   });
 
   describe('check state content', () => {
     const wrapper = shallow(<App />);
     it('contain news array', () => {
-      expect(wrapper.state().news).toEqual([]);
+      expect(wrapper.state().newsPosts).toEqual([]);
     });
     it('contain newsInput with empty string', () => {
-      expect(wrapper.state().newsInput).toEqual('');
+      expect(wrapper.state().value).toEqual('');
     });
   });
 
@@ -41,15 +41,15 @@ describe('App component', () => {
       const wrapper = shallow(<App />);
       wrapper.find('input').simulate('change', {target: {value: 10}});
       wrapper.update();
-      expect(wrapper.state().newsInput).toEqual(10);
+      expect(wrapper.state().value).toEqual(10);
     });
     it('create new post from value state.newsInput via click on button', () => {
       const wrapper = shallow(<App />);
       wrapper.find('input').simulate('change', {target: {value: 10}});
       wrapper.update();
       wrapper.find('button').simulate('click');
-      expect(wrapper.state().newsInput).toEqual('');
-      expect(wrapper.state().news[0].text).toEqual(10);
+      expect(wrapper.state().value).toEqual('');
+      expect(wrapper.state().newsPosts[0].value).toEqual(10);
     });
   });
 
@@ -60,10 +60,10 @@ describe('App component', () => {
       wrapper.update();
       wrapper.find('button').simulate('click');
       wrapper.update();
-      const newsFromState = wrapper.state().news[0];
+      const newsFromState = wrapper.state().newsPosts[0];
       expect(
         wrapper.contains(
-          <NewsPost key={newsFromState.text} text={newsFromState.text} />
+          <NewsPost key={newsFromState.value} value={newsFromState.value} />
         )
       ).toBeTruthy();
     });
