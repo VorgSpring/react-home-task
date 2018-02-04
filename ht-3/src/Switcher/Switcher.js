@@ -2,6 +2,8 @@ import React, { Component as ReactComponent } from 'react'
 import './Switcher.css'
 
 class Switcher extends ReactComponent {
+    static displayName = 'Switcher'
+    
     state = {
         selectedChild: 0
     }

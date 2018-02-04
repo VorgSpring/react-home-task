@@ -1,6 +1,8 @@
 import React, { Component as ReactComponent } from 'react'
 
 class CardNumberInput extends ReactComponent {
+    static displayName = 'Card number input'
+
     constructor(props) {
         super(props)
         this.state = {

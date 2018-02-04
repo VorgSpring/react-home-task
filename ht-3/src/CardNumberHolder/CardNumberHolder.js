@@ -2,6 +2,8 @@ import React, { Component as ReactComponent } from 'react'
 import CardNumberInput from './CardNumberInput'
 
 class CardNumberHolder extends ReactComponent {
+    static displayName = 'Card number formating'
+    
     state = {
         cardNumber: ''
     }

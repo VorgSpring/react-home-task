@@ -3,6 +3,8 @@ import Modal from './Modal'
 import './ModalButton.css'
 
 class ModalButton extends ReactComponent {
+    static displayName = 'ModalButton'
+
     state = {
         isModalShow: false
     }
