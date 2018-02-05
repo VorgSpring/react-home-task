@@ -17,7 +17,7 @@ class CardNumberInput extends ReactComponent {
     }
 
     format(number) {
-        if(number === '' || number === null || number === undefined) return ''
+        if(!number) return ''
         number = this.normalize(number)
         return number.match(/.{1,4}/g).join(' ')
     }
@@ -28,7 +28,7 @@ class CardNumberInput extends ReactComponent {
 
     onChange = (event) => {
         let value = event.target.value
-        value = (value === '' || value === null) ? '' : this.normalize(value)
+        value = (!value) ? '' : this.normalize(value)
         this.props.onChange(value)
     }
 
