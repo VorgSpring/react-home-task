@@ -4,12 +4,12 @@ const {search, shows} = createActions(
     {
         SEARCH: {
             REQUEST: undefined,
-            SUCCESS: [films => films, (_, length) => ({length})],
+            SUCCESS: films => films,
             FAILURE: undefined,
         }, 
         SHOWS: {
             REQUEST: undefined,
-            SUCCESS: [film => film, (_, length) => ({length})],
+            SUCCESS: film => film,
             FAILURE: undefined,
         }, 
     },
