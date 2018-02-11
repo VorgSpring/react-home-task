@@ -1,0 +1,13 @@
+.show__actors {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.show__actor {
+    max-width: 250px;
+    margin: 0 30px;
+}
+
+.show__actor img {
+    max-width: 150px;
+}
