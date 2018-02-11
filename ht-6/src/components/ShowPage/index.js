@@ -10,7 +10,6 @@ class ShowPage extends Component {
     constructor(props) {
         super(props);
         this.props.request(this.props.match.params.id);
-        console.log(this.props.isLoading);
     }
 
     render() {

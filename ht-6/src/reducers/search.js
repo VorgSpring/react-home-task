@@ -11,12 +11,6 @@ const isFetching = handleActions(
   false,
 );
 
-const isFetched = handleActions({
-  [search.request]: () => false,
-  [search.success]: () => true,
-  [search.failure]: () => true,
-}, false)
-
 const films = handleActions(
   {
     [search.success]: (state, action) => [ ...action.payload ],
@@ -35,12 +29,10 @@ const error = handleActions(
 
 export default combineReducers({
   isFetching,
-  isFetched,
   films,
   error,
 });
 
 export const getIsLoading = state => state.search.isFetching;
-export const getIsLoaded = state => state.search.isFetched;
 export const getFilms =  state => state.search.films;
 export const getError = state => state.search.error;

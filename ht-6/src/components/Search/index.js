@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import {getFilms, getIsLoading, getIsLoaded, getError} from '../../reducers/search';
+import {getFilms, getIsLoading, getError} from '../../reducers/search';
 import {search} from '../../actions';
 import {connect} from 'react-redux'
 import './Search.css';
@@ -58,7 +58,6 @@ class Search extends Component {
 const mapStateToProps = state => ({
     films: getFilms(state),
     isLoading: getIsLoading(state),
-    isLoaded: getIsLoaded(state),
     error: getError(state),
 });
 
