@@ -14,10 +14,7 @@ export default function (state = initState, action) {
             break
 
         case (MOVE_ORDER_TO_FARM):
-            orders = state.orders.filter(order => {
-                return order.id !== action.payload.id
-            })
-
+            orders = state.orders.filter(order => order.id !== action.payload.id)
             newState = { ...state, orders }
             break
 
